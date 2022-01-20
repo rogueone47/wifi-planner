@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+body{
+    background: #27272F;
+    height:100vh;
+}
+nav{
+    height: 70px;
+    background: #16161D;
+    display: flex;
+    padding: .5rem;
+}
+.logo{
+    height: 100%;
+}
+.logo img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.btns{
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    background: none;
+    padding: .4rem;
+    border-radius: .25rem;
+}
+.btns i{
+    margin-right: .5rem;
+}
+.nav-buttons{
+    flex-grow: 1;
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.dwn{
+    background: #1BE4C9;
+    color: #000000;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+.dwn:hover{
+    background: #149180;
+}
+main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.left{
+    background: #1B1B22;
+    height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.right{
+    color: #ffffff;
+    padding: 1rem;
+}
+.tool-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5rem;
+}
+.tool{
+    border : 1px solid #ffffff;
+    padding: .5rem;
+    border-radius: .4rem;
+    width: 3rem;
+    text-align: center;
+    background: none;
+    color: #ffffff;
+}
+.box-title{
+    text-align: center;
+}
+.material{
+    padding: .5rem;
+    /* background: none; */
+    border: 1px solid#000000;
+    border-radius: .25rem;
+    /* color: #ffffff; */
+}
+.material-box{
+    padding: 1rem;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.d2l{
+    background: none;
+    color: #ffffff;
+    transition: .4s all ease-in-out;
+    cursor: pointer;
+}
+.d2l:hover{
+    background: #ffffff;
+    color: #16161d;
+}
+.l2d{
+    background: #ffffff;
+    color: none;
+    transition: .4s all ease-in-out;
+    cursor: pointer;
+}
+.l2d:hover{
+    background: none;
+    color: #ffffff;
+}
+#canvas{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
