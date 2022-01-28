@@ -1,47 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a9deb815db.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a9deb815db.js"
+      crossorigin="anonymous"
+    ></script>
     <title>wifi</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="logo"><img src="./assets/logo.jpeg" alt=""></div>
-        <div class="nav-buttons">
-            <button class="btns d2l"><i class="fas fa-pencil-alt"></i>ground floor</button>
-            <button class="btns d2l"><i class="fas fa-file-import"></i>import plan</button>
-            <button class="btns d2l"><i class="fas fa-save"></i>Save draft</button>
-            <button class="btns dwn"><i class="fas fa-cloud-download-alt"></i>download</button>
-        </div>
+      <div class="logo"><img src="./assets/logo.jpeg" alt="" /></div>
+      <div class="nav-buttons">
+        <button class="btns d2l">
+          <i class="fas fa-pencil-alt"></i>ground floor
+        </button>
+        <button class="btns d2l">
+          <i class="fas fa-file-import"></i>import plan
+        </button>
+        <button class="btns d2l"><i class="fas fa-save"></i>Save draft</button>
+        <button class="btns dwn">
+          <i class="fas fa-cloud-download-alt"></i>download
+        </button>
+      </div>
     </nav>
     <main>
-        <div class="left">
-            <svg id="canvas"></svg>
+      <div class="left">
+        <div class="canvas-box">
+          <div class="svg-container">
+            <svg id="canvas">
+              <defs>
+                <pattern
+                  id="smallGrid"
+                  width="10"
+                  height="10"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M 10 0 L 0 0 0 10"
+                    fill="none"
+                    stroke="#0003"
+                    stroke-width="0.5"
+                  />
+                </pattern>
+                <pattern
+                  id="grid"
+                  width="100"
+                  height="100"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <rect width="100" height="100" fill="url(#smallGrid)" />
+                  <path
+                    d="M 100 0 L 0 0 0 100"
+                    fill="none"
+                    stroke="#1112"
+                    stroke-width="1"
+                  />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+          </div>
         </div>
-        <div class="right">
-            <div class="tool-box">
-                <div class="box-title">Tools</div>
-                <div class="tool-items">
-                    <button class="tool d2l"><i class="fas fa-eraser"></i></button>
-                    <button class="tool d2l"><i class="fas fa-slash"></i></button>
-                    <button class="tool d2l"><i class="fas fa-circle"></i></button>
-                </div>
-            </div>
-            <div class="materials">
-                <div class="box-title">Materials</div>
-                <div class="material-box">
-                    <button class="material l2d active" onclick="changeColor(this,'CONCRETE')">concrete</button>
-                    <button class="material l2d" onclick="changeColor(this,'WOOD')">wood</button>
-                    <button class="material l2d" onclick="changeColor(this,'GLASS')">glass</button>
-                    <button class="material l2d" onclick="changeColor(this,'METAL')">metal</button>
-                </div>
-            </div>
+        <div class="lineX" id="lineX"></div>
+        <div class="lineY" id="lineY"></div>
+      </div>
+      <div class="right">
+        <div class="tool-box">
+          <div class="box-title">Tools</div>
+          <div class="tool-items">
+            <!-- <button class="tool d2l"><i class="fas fa-arrows-alt"></i></button> -->
+            <!-- <button class="tool d2l" id="draw"><i class="fas fa-slash"></i></button> -->
+            <input
+              type="radio"
+              name="draw-state"
+              id="select"
+              class="radio"
+              checked
+            />
+            <label for="select" id="select-lbl"
+              ><button class="tool d2l choice-btn">
+                <i class="fas fa-arrows-alt"></i></button
+            ></label>
+            <input type="radio" name="draw-state" id="line" class="radio" />
+            <label for="line" id="line-lbl"
+              ><button class="tool d2l choice-btn" id="draw">
+                <i class="fas fa-slash"></i></button
+            ></label>
+            <button class="tool d2l" id="undo">
+              <i class="fas fa-undo"></i>
+            </button>
+          </div>
         </div>
+        <div class="materials">
+          <div class="box-title">Materials</div>
+          <div class="material-box">
+            <button
+              class="material l2d active"
+              onclick="changeColor(this,'CONCRETE')"
+            >
+              concrete
+            </button>
+            <button class="material l2d" onclick="changeColor(this,'WOOD')">
+              wood
+            </button>
+            <button class="material l2d" onclick="changeColor(this,'GLASS')">
+              glass
+            </button>
+            <button class="material l2d" onclick="changeColor(this,'METAL')">
+              metal
+            </button>
+          </div>
+        </div>
+        <div class="zoom">
+          <div class="box-title">zoom</div>
+          <div class="material-box">
+            <button class="z-btn l2d" id="z-in">+</button>
+            <button class="z-btn l2d" id="z-out">-</button>
+          </div>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
-</body>
+    <script src="tools.js"></script>
+    <script src="zoom.js"></script>
+  </body>
 </html>
