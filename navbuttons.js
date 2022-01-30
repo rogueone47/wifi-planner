@@ -8,8 +8,18 @@ planImport.addEventListener('change', function(){
     if(file){
         const reader = new FileReader();
 
-        reader.addEventListener('load', function(){
-           canvas.style.background = `url('${this.result}')`
+        reader.addEventListener('load', function(e){
+            const planImage = new Image();
+            planImage.src = e.target.result;
+            planImage.onload = function(){
+                let height = this.height;
+                let width = this.width;
+                console.log(height, width)
+                canvas.style.height = height;
+                canvas.style.width = width;
+            }
+            
+           canvas.style.background = `url('${this.result}')`;
         });
         reader.readAsDataURL(file);
     }
