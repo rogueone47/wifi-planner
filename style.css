@@ -19,8 +19,8 @@ nav {
   height: 100%;
 }
 .logo img {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 .btns {
@@ -29,6 +29,7 @@ nav {
   background: none;
   padding: 0.4rem;
   border-radius: 0.25rem;
+  font-size: 14px;
 }
 .btns i {
   margin-right: 0.5rem;
@@ -84,10 +85,8 @@ main {
 }
 .material {
   padding: 0.5rem;
-  /* background: none; */
   border: 1px solid#000000;
   border-radius: 0.25rem;
-  /* color: #ffffff; */
 }
 .material-box {
   padding: 1rem;
@@ -123,23 +122,29 @@ main {
   color: #27272f;
 }
 #canvas {
-  width: 1600px;
-  height: 1600px;
+  width: 1800px;
+  height: 1200px;
+  transform: scale(0.4) translateX(0%) translateY(0%);
+  cursor: pointer;
   background: #ffffff;
+  background-size: auto 100% !important;
+  background-repeat:no-repeat !important;
+  background-position: center !important;
 }
 .svg-container {
-  align-items: center;
-  height: 1600px;
-  width: 1600px;
+  height: 1800px;
+  width: 1200px;
+  margin: auto;
 }
-.lineX {
+/* .lineX {
   position: absolute;
   bottom: 50%;
   left: 0;
   width: 100%;
   height: 0;
-  border: 0.5px dashed;
+  border: .5px dashed red;
   pointer-events: none;
+  display: none;
 }
 .lineY {
   position: absolute;
@@ -147,26 +152,28 @@ main {
   top: 0;
   width: 0;
   height: 100%;
-  border: 0.5px dashed;
+  border: .5px dashed red;
   pointer-events: none;
-}
+  display: none;
+} */
 .z-btn {
   font-size: 22px;
   border-radius: 0.25rem;
   border: none;
-  width: 3rem;
-  margin: auto;
+  /* width: 3rem; */
+  /* margin: auto; */
 }
 .canvas-box {
   width: 100%;
   height: 100%;
-  background: #27272f;
+  /* background: #27272f; */
+  background: #ffffff;
   overflow: scroll;
   box-sizing: border-box;
 }
 .canvas-box::-webkit-scrollbar {
-  width: .5rem;
-  height: .5rem;
+  width: .3rem;
+  height: .3rem;
 }
 .canvas-box::-webkit-scrollbar-track {
     background: #ffffff;
@@ -182,7 +189,16 @@ main {
 .choice-btn{
     pointer-events: none;
 }
+label{
+  cursor: pointer;
+}
 #select:checked ~ #select-lbl button, #line:checked ~ #line-lbl button{
     background: #ffffff;
     color: #27272f;
+}
+.mt{
+  margin-top: 1rem;
+}
+#import{
+  display: none;
 }

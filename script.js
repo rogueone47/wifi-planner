@@ -16,6 +16,7 @@ const colors = {
 var COLOR = colors["CONCRETE"];
 
 
+// changing color of line in svg while selecting each material
 changeColor = (btn, clr) => {
   COLOR = colors[clr];
   for (const btn in materialBtn) {
@@ -55,8 +56,11 @@ canvas.addEventListener("click", (e) => {
       );
       newLine.setAttribute(
         "style",
-        `stroke:${COLOR};stroke-width:10;stroke-linecap:round`
+        `stroke:${COLOR};stroke-width:5;stroke-linecap:square`
       );
+      
+      newLine.setAttribute('onclick', 'changeProp(this)');
+
       canvas.append(newLine);
       clickedOnce = true;
     } else {
@@ -65,13 +69,29 @@ canvas.addEventListener("click", (e) => {
   }
 });
 
-
+//endpoit of line
 canvas.addEventListener("mousemove", (e) => {
   let svgP = svgPoint(canvas, e.clientX, e.clientY);
   if (clickedOnce) {
     canvas.lastChild.setAttribute("x2", `${svgP.x}`); //e.layerx
     canvas.lastChild.setAttribute("y2", `${svgP.y}`); //e.layery
   }
-  lineX.style.top = `${e.pageY}px`; //e,pagey
-  lineY.style.left = `${e.pageX}px`; //e.pagex
+  // lineX.style.top = `${e.pageY}px`; //e,pagey
+  // lineY.style.left = `${e.pageX}px`; //e.pagex
 });
+
+// showing svg lines in console 
+// this is on test state
+changeProp = (e)=>{
+  if (!drawable) {
+    console.log('clicked', e);   
+    alert(e);
+  }
+}
+
+// set initial scroll to middle
+// not an optimal solution
+var h = document.getElementById('canvas-box').scrollWidth;
+var w = document.getElementById('canvas-box').scrollHeight;
+document.getElementById('canvas-box').scrollTop = (h/2)-(h/3);
+document.getElementById('canvas-box').scrollLeft =  (w/2)-(w/4);

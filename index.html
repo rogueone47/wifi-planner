@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assets/logo.jpeg" />
     <script
       src="https://kit.fontawesome.com/a9deb815db.js"
       crossorigin="anonymous"
@@ -12,25 +13,31 @@
     <title>wifi</title>
   </head>
   <body>
+    <!-- navbar area  -->
     <nav>
-      <div class="logo"><img src="./assets/logo.jpeg" alt="" /></div>
+      <div class="logo"><img src="./assets/icon.svg" alt="" /></div>
       <div class="nav-buttons">
         <button class="btns d2l">
           <i class="fas fa-pencil-alt"></i>ground floor
         </button>
-        <button class="btns d2l">
-          <i class="fas fa-file-import"></i>import plan
-        </button>
+        <input type="file" name="pic" id="import" accept="image/*" />
+        <label for="import" class="btns d2l">
+          <i class="fas fa-file-import"></i>
+          import plan
+        </label>
         <button class="btns d2l"><i class="fas fa-save"></i>Save draft</button>
         <button class="btns dwn">
           <i class="fas fa-cloud-download-alt"></i>download
         </button>
       </div>
     </nav>
+
+
     <main>
+      <!-- left container for svg -->
       <div class="left">
-        <div class="canvas-box">
-          <div class="svg-container">
+        <div class="canvas-box" id="canvas-box">
+          <div class="svg-container" id="a">
             <svg id="canvas">
               <defs>
                 <pattern
@@ -42,7 +49,7 @@
                   <path
                     d="M 10 0 L 0 0 0 10"
                     fill="none"
-                    stroke="#0003"
+                    stroke="red"
                     stroke-width="0.5"
                   />
                 </pattern>
@@ -56,7 +63,7 @@
                   <path
                     d="M 100 0 L 0 0 0 100"
                     fill="none"
-                    stroke="#1112"
+                    stroke="green"
                     stroke-width="1"
                   />
                 </pattern>
@@ -65,15 +72,19 @@
             </svg>
           </div>
         </div>
-        <div class="lineX" id="lineX"></div>
-        <div class="lineY" id="lineY"></div>
+
+        <!-- commented out for thinking better solution -->
+        <!-- <div class="lineX" id="lineX"></div>
+        <div class="lineY" id="lineY"></div> -->
+
+
       </div>
+
+      <!-- container for tools  -->
       <div class="right">
         <div class="tool-box">
           <div class="box-title">Tools</div>
           <div class="tool-items">
-            <!-- <button class="tool d2l"><i class="fas fa-arrows-alt"></i></button> -->
-            <!-- <button class="tool d2l" id="draw"><i class="fas fa-slash"></i></button> -->
             <input
               type="radio"
               name="draw-state"
@@ -122,10 +133,15 @@
             <button class="z-btn l2d" id="z-out">-</button>
           </div>
         </div>
+        <div class="property">
+          <div class="box-title mt">properties</div>
+          <img src="" id="img" alt="" />
+        </div>
       </div>
     </main>
     <script src="script.js"></script>
     <script src="tools.js"></script>
     <script src="zoom.js"></script>
+    <script src="navbuttons.js"></script>
   </body>
 </html>
