@@ -1,28 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="./landing.css">
     <title>Document</title>
 </head>
 <body>
     <div class="container">
-    <div class="info-container">
-        <div class="writings">
-            <div class="title">
-                Lorem
-            </div>
-            <div class="about">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, saepe? Corporis voluptas ea eum, placeat illum eius ex iusto accusamus ullam, qui natus. Enim delectus pariatur, non quas obcaecati dolorem.
+        <div class="heading">Wifi Planner</div>
+        <div class="navs">
+        <div class="hvr-btn">
+        <div class="btn-bg">
+            <div class="front">Draw on plan</div>
+            <div class="back">
+                Upload an image and trace the image on canvas
+                <a class="more" id="open">see more</a>
             </div>
         </div>
-        <div class="landing-btns">
-            <a class="landing-choice-btn" href="">draw plan</a>
-            <a class="landing-choice-btn" href="">draw from image</a>
+        </div>
+        <div class="hvr-btn">
+        <div class="btn-bg">
+            <div class="front">draw on plain canvas</div>
+            <div class="back">
+                draw on a plain canvas from scratch
+                <a href="" class="more">see more</a>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+
+
+<!-- place crop widgets and elements here -->
+
+            upload
+            <div class="close" id="close">X</div>
         </div>
     </div>
-</div>
+    </div>
+    </div>
+    <script src="./landing.js"></script>
 </body>
 </html>
