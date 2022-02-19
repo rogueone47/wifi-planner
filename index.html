@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./landing.css">
+    <link  href="./cropper/cropper.css" rel="stylesheet">
+    <script src="./cropper/cropper.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -31,10 +33,27 @@
         </div>
         <div class="popup" id="popup">
 
-
+            
 <!-- place crop widgets and elements here -->
 
-            upload
+
+<input type="file" name="pic" id="import" accept="image/*" />
+<label for="import" class="upload-btn">
+    <i class="upload-bg">
+           Upload</i>
+        </label>
+
+        <form method="POST" enctype="multipart/form-data" id="post-form" style="margin-bottom: 20px; padding: 30px 20px;">
+            ....
+            <div class="form-group">
+              <div id="image-box" class="image-container"></div>
+              <button class="btn btn-outline-info" id="crop-btn" style="width: 100%; margin-top: 10px; display: none;" type="button">Crop</button>
+              <button class="btn btn-outline-info" id="confirm-btn" style="width: 100%; margin-top: 10px;" type="submit">Post</button>
+            </div>
+        </form>
+
+    </div>  
+    </div>
             <div class="close" id="close">X</div>
         </div>
     </div>
@@ -42,4 +61,7 @@
     </div>
     <script src="./landing.js"></script>
 </body>
+<main>
+</main>
+<script src="crop.js"></script>
 </html>
