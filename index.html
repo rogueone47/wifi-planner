@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./landing.css">
-    <link  href="./cropper/cropper.css" rel="stylesheet">
-    <script src="./cropper/cropper.js"></script>
+    <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.css">
     <title>Document</title>
 </head>
 <body>
@@ -31,37 +30,47 @@
                 <a href="" class="more">see more</a>
             </div>
         </div>
-        <div class="popup" id="popup">
-
-            
-<!-- place crop widgets and elements here -->
-
-
-<input type="file" name="pic" id="import" accept="image/*" />
-<label for="import" class="upload-btn">
-    <i class="upload-bg">
-           Upload</i>
-        </label>
-
-        <form method="POST" enctype="multipart/form-data" id="post-form" style="margin-bottom: 20px; padding: 30px 20px;">
-            ....
-            <div class="form-group">
-              <div id="image-box" class="image-container"></div>
-              <button class="btn btn-outline-info" id="crop-btn" style="width: 100%; margin-top: 10px; display: none;" type="button">Crop</button>
-              <button class="btn btn-outline-info" id="confirm-btn" style="width: 100%; margin-top: 10px;" type="submit">Post</button>
-            </div>
-        </form>
-
-    </div>  
-    </div>
-            <div class="close" id="close">X</div>
+        </div>
         </div>
     </div>
-    </div>
-    </div>
+        <div class="popup" id="popup">
+            
+            
+            <!-- place crop widgets and elements here -->
+            <div class="display-area">
+    <div class="close"><span id="close">x</span></div>
+</div>
+        <div class="container-item-box-b4" id="cont">
+            <div class="preview" id="image-box"></div>
+            <input type="file" name="pic" id="import" accept="image/*">
+            <label for="import" class="upload-btn">
+                    upload
+            </label>
+            <button class="crop-btn" id="crop-btn">Crop</button>
+        </div>
+        <div class="property-section" id="scale-section">
+            <div class="show-pic" id="sample">
+            </div>
+            <div class="setup">
+                <form action="POST">
+                <h2 class="prop-head my">project setup</h2>
+                <input type="text" class="inputs my"  placeholder="Project Name" name="name" id="name">
+                <h3 class="prop-head my">scale</h3>
+                <div class="scale-control my">
+                    <span class="minus" id="minus">-</span>
+                    <input type="text" class="inputs scale-val-in" name="scale" id="scale" value="1">
+                    <span class="plus" id="plus">+</span>
+                </div>
+                <button type="submit" class="my post">next</button>
+            </form>
+            </div>
+        </div>
+</div>
+
+
     <script src="./landing.js"></script>
+    <script src="crop.js"></script>
+    <script src="scaleSelect.js"></script>
+    <script src="./node_modules/cropperjs/dist/cropper.js"></script>
 </body>
-<main>
-</main>
-<script src="crop.js"></script>
 </html>

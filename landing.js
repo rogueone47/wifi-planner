@@ -6,5 +6,5 @@ closeBtn.addEventListener('click', ()=>{
     popUp.style.display = 'none';
 });
 openBtn.addEventListener('click', ()=>{
-    popUp.style.display = 'block';
+    popUp.style.display = 'flex';
 })
