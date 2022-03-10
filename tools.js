@@ -28,7 +28,16 @@ select.onchange = ()=>{
 // undo function
 // pop elements from svg array
 undo.addEventListener('click', ()=>{
-    if (canvas.childElementCount > 2) {   
+    if (canvas.childElementCount > 3) {   
         canvas.lastChild.remove();
     }
 });
+
+//Transparency Slider
+
+const range = document.getElementById("myRange")
+const canva = document.getElementById("canva")
+
+range.addEventListener("input", (e) => {
+    canva.style.fillOpacity = e.target.value;
+})
