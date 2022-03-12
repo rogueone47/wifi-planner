@@ -16,6 +16,8 @@ def home():
     if request.method == 'POST':
         img = request.form.get('image')
         return render_template('index.html', data= img)
+    else:
+        return render_template('index.html')
 
 
 if __name__ == '__main__':

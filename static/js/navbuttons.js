@@ -1,7 +1,7 @@
 const planImport = document.getElementById('import');
 const img = document.getElementById('img');
 
-// import image to the background
+
 planImport.addEventListener('change', function(){
     const file = this.files[0];
 

@@ -20,11 +20,15 @@
         <button class="btns d2l">
           <i class="fas fa-pencil-alt"></i>ground floor
         </button>
-        <input type="file" name="pic" id="import" accept="image/*" />
+        <!-- <input type="file" name="pic" id="import" accept="image/*" />
         <label for="import" class="btns d2l">
           <i class="fas fa-file-import"></i>
           import plan
-        </label>
+        </label> -->
+        <a href="/" class="btns d2l" style="text-decoration: none;">
+          <i class="fas fa-file-import"></i>
+          import plan
+        </a>
         <button class="btns d2l"><i class="fas fa-save"></i>Save draft</button>
         <button class="btns dwn">
           <i class="fas fa-cloud-download-alt"></i>download
@@ -137,17 +141,17 @@
           </div>
         </div>
         <div class="property">
-          <div class="box-title mt">properties</div>
+          <div class="box-title mt">transparency</div>
           <img src="" id="img" alt="" />
         </div>
         <div class="slidecontainer">
-          <input type="range" min="0.0" max="1" step="0.05" value=".5" class="slider" id="myRange">
+          <input type="range" min="0.0" max="1" step="0.05" value="0" class="slider" id="myRange">
         </div>
       </div>
     </main>
     <script src="{{url_for('static', filename='js/script.js')}}"></script>
     <script src="{{url_for('static', filename='js/tools.js')}}"></script>
     <script src="{{url_for('static', filename='js/zoom.js')}}"></script>
-    <script src="{{url_for('static', filename='js/navbuttons.js')}}"></script>
+    <!-- <script src="{{url_for('static', filename='js/navbuttons.js')}}"></script> -->
   </body>
 </html>
