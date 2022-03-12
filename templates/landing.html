@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/landing.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/cropperjs/dist/cropper.css')}}">
+    <title>wifi planner</title>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">Wifi Planner</div>
+        <div class="navs">
+        <div class="hvr-btn">
+        <div class="btn-bg">
+            <div class="front">Draw on plan</div>
+            <div class="back">
+                Upload an image and trace the image on canvas
+                <a class="more" id="open">see more</a>
+            </div>
+        </div>
+        </div>
+        <div class="hvr-btn">
+        <div class="btn-bg">
+            <div class="front">draw on plain canvas</div>
+            <div class="back">
+                draw on a plain canvas from scratch
+                <a href="" class="more">see more</a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+        <div class="popup" id="popup">
+            
+            
+            <!-- place crop widgets and elements here -->
+            <div class="display-area">
+    <div class="close"><span id="close">x</span></div>
+</div>
+        <div class="container-item-box-b4" id="cont">
+            <div class="preview" id="image-box"></div>
+            <input type="file" name="pic" id="import" accept="image/*">
+            <label for="import" class="upload-btn">
+                    upload
+            </label>
+            <button class="crop-btn" id="crop-btn">Crop</button>
+        </div>
+        <div class="property-section" id="scale-section">
+            <div class="show-pic" id="sample">
+            </div>
+            <div class="setup">
+                <form method="POST" action="/home">
+                <h2 class="prop-head my">project setup</h2>
+                <input type="text" class="inputs my"  placeholder="Project Name" name="name" id="name">
+                <input type="text" name="image" id="planimg" style="display: none;">
+                <h3 class="prop-head my">scale</h3>
+                <div class="scale-control my">
+                    <input type="number" min="1" max="20" id="scale" value="1" class="inputs scale-val-in" name="scale">
+                </div>
+                <button type="submit" class="my post">next</button>
+            </form>
+            </div>
+        </div>
+</div>
+
+
+    <script src="{{url_for('static', filename='js/landing.js')}}"></script>
+    <script src="{{url_for('static', filename='js/crop.js')}}"></script>
+    <script src="{{ url_for('static', filename='node_modules/cropperjs/dist/cropper.js')}}"></script>
+</body>
+</html>
