@@ -8,10 +8,10 @@ var lineY = document.getElementById("lineY");
 var lineX = document.getElementById("lineX");
 
 const colors = {
-  WOOD: "#BA8C63",
-  METAL: "#939799",
-  CONCRETE: "#808076",
-  GLASS: "#a8ccd7",
+  WOOD: "#CC9544",
+  METAL: "#B2B1B9",
+  CONCRETE: "#595260",
+  GLASS: "#A2DBFA",
 };
 var COLOR = colors["CONCRETE"];
 
@@ -56,7 +56,7 @@ canvas.addEventListener("click", (e) => {
       );
       newLine.setAttribute(
         "style",
-        `stroke:${COLOR};stroke-width:5;stroke-linecap:square`
+        `stroke:${COLOR};stroke-width:10;stroke-linecap:square`
       );
       
       newLine.setAttribute('onclick', 'changeProp(this)');

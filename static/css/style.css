@@ -236,6 +236,11 @@ label{
   cursor: pointer;
 }
 
+.Transparency{
+  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+} 
+
 #canva {
   fill-opacity: 0;
 }

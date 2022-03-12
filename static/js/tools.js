@@ -28,7 +28,7 @@ select.onchange = ()=>{
 // undo function
 // pop elements from svg array
 undo.addEventListener('click', ()=>{
-    if (canvas.childElementCount > 3) {   
+    if (canvas.childElementCount > 1) {   
         canvas.lastChild.remove();
     }
 });
