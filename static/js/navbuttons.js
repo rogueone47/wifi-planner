@@ -1,26 +1,14 @@
-const planImport = document.getElementById('import');
-const img = document.getElementById('img');
+const exportBtn = document.getElementById('export');
+const svgInfo = document.getElementById('canvas');
+const svgInput = document.getElementById('svg-data');
 
-
-planImport.addEventListener('change', function(){
-    const file = this.files[0];
-
-    if(file){
-        const reader = new FileReader();
-
-        reader.addEventListener('load', function(e){
-            const planImage = new Image();
-            planImage.src = e.target.result;
-            planImage.onload = function(){
-                let height = this.height;
-                let width = this.width;
-                console.log(height, width)
-                canvas.style.height = height;
-                canvas.style.width = width;
-            }
-            
-           canvas.style.background = `url('${this.result}')`;
-        });
-        reader.readAsDataURL(file);
+exportBtn.addEventListener('click', ()=>{
+    var svgText = svgInfo.childNodes;
+    let myData = [];
+    for (let i = 7; i < svgText.length; i++) {
+        const element = svgText[i];
+        myData = [...myData, element.attributes];
     }
+    svgInput.value = myData;
+    document.getElementById('svg-form').submit();
 })

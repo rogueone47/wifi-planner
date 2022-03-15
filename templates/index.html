@@ -31,8 +31,9 @@
         </a>
         <button class="btns d2l"><i class="fas fa-save"></i>Save draft</button>
         <button class="btns dwn" id="export">
-          <i class="fas fa-cloud-download-alt"></i>Export
+          <i class="fas fa-cloud-download-alt" id="export"></i>Export
         </button>
+        <form action="/out" method="post" id="svg-form" hidden><input type="text" name="svg" id="svg-data" hidden></form>
       </div>
     </nav>
 
@@ -150,6 +151,6 @@
     <script src="{{url_for('static', filename='js/script.js')}}"></script>
     <script src="{{url_for('static', filename='js/tools.js')}}"></script>
     <script src="{{url_for('static', filename='js/zoom.js')}}"></script>
-    <!-- <script src="{{url_for('static', filename='js/navbuttons.js')}}"></script> -->
+    <script src="{{url_for('static', filename='js/navbuttons.js')}}"></script>
   </body>
 </html>

@@ -1,4 +1,3 @@
-from django.shortcuts import redirect
 from flask import Flask, render_template, request, redirect
 from flask_cors import CORS 
 
@@ -14,8 +13,18 @@ def landing():
 def home():
     img = ''
     if request.method == 'POST':
-        img = request.form.get('image')
+        img = request.form.get('planImage')
         return render_template('index.html', data= img)
     else:
         return render_template('index.html')
 
+
+@app.route('/out', methods=['GET', 'POST'])
+def view():
+    if request.method == 'POST':
+        svg = request.form.get('svg')
+        print(svg)
+        return "output"
+
+if __name__ == '__main__':
+    app.run(debug=True)
