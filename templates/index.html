@@ -25,7 +25,7 @@
           <i class="fas fa-file-import"></i>
           import plan
         </label> -->
-        <a href="/" class="btns d2l" style="text-decoration: none;">
+        <a href="/" class="btns d2l" style="text-decoration: none; display: flex;justify-content: center; align-items: center;">
           <i class="fas fa-file-import"></i>
           import plan
         </a>
@@ -81,9 +81,6 @@
           </div>
         </div>
 
-        <!-- commented out for thinking better solution -->
-        <!-- <div class="lineX" id="lineX"></div>
-        <div class="lineY" id="lineY"></div> -->
 
 
       </div>
@@ -98,13 +95,14 @@
               name="draw-state"
               id="select"
               class="radio"
+              value="1"
               checked
             />
             <label for="select" id="select-lbl"
               ><button class="tool d2l choice-btn">
                 <i class="fas fa-arrows-alt"></i></button
             ></label>
-            <input type="radio" name="draw-state" id="line" class="radio" />
+            <input type="radio" name="draw-state" id="line" class="radio" value="2" />
             <label for="line" id="line-lbl"
               ><button class="tool d2l choice-btn" id="draw">
                 <i class="fas fa-slash"></i></button
