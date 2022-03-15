@@ -10,7 +10,6 @@ window.onload = ()=>{
     let imgsrc = canvas.style.backgroundImage.replace(/url\(['"]*(.*?)['"]*\)/g, '$1');
     actualImage.src = imgsrc
     actualImage.onload = function(){
-        console.log(actualImage.width)
         canvas.style.width = `${actualImage.width}px`;
         canvas.style.height = `${actualImage.height}px`;
     }

@@ -44,7 +44,6 @@ canvas.addEventListener("mousedown", (e) => {
     if (!isDown) {
       x1 = svgP.x;
       y1 = svgP.y;
-      console.log(x1, y1);
       let newLine = document.createElementNS(svgns, "line");
       newLine.setAttribute("x1", `${x1}`);
       newLine.setAttribute("y1", `${y1}`);
