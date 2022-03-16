@@ -49,16 +49,14 @@ canvas.addEventListener("mousedown", (e) => {
       newLine.setAttribute("y1", `${y1}`);
       newLine.setAttribute("x2", `${x1}`);
       newLine.setAttribute("y2", `${y1}`);
-      newLine.setAttribute(
-        "style",
-        `stroke:${COLOR};stroke-width:10;stroke-linecap:round`
-      );
-      newLine.setAttribute(
-        "style",
-        `stroke:${COLOR};stroke-width:10;stroke-linecap:square`
-      );
       
-      newLine.setAttribute('onclick', 'changeProp(this)');
+      newLine.setAttribute(
+        "style",
+        'stroke-width:10;stroke-linecap:square'
+      );
+
+      
+      newLine.setAttribute('stroke', `${COLOR}`);
 
       canvas.append(newLine);
       isDown = true;
