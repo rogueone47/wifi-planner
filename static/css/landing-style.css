@@ -232,8 +232,8 @@ nav {
 
 .upload{
   position: relative;
-  height: calc(100vh - 84px);
-  background: url("../assets/bp3.png");
+  height: calc(100vh - 115px);
+  background: url("../assets/bp4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -241,8 +241,10 @@ nav {
   width: 100%;
   max-width: 680px;
   height: 100%;
-  padding: .5rem;
-  background: #1a1d26;
+  padding: .1rem;
+  background-position: center;
+  background: url("../assets/bp4.5.jpg");
+  background-repeat: no-repeat;
   border: 1px solid #01a3ea;
   border-radius: .25rem;
   display: flex;
