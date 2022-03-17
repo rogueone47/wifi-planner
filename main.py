@@ -32,7 +32,7 @@ def view():
             c.create_line(i['x1'], i['y1'],i['x2'],i['y2'],fill=i['stroke'], width=2)
         c.pack()
         r.mainloop()
-        return str(svg)
+        return render_template('out.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
