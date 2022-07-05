@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cropperjs": "^1.5.12",
+    "heatmap.js": "^2.0.5"
+  }
+}
