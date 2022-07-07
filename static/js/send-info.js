@@ -1,4 +1,4 @@
-$("#export").click(()=>{
+$('.submit').click(()=>{
     let data = [];
     for (let i = 0; i < $('#canvas').find("line").length; i++) {
         const e = $('#canvas').find("line")[i];
