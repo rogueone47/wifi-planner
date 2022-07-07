@@ -1,4 +1,4 @@
-$("#export").click(()=>{
+$(document).on('click','.submit',()=>{
     let data = [];
     for (let i = 0; i < $('#canvas').find("line").length; i++) {
         const e = $('#canvas').find("line")[i];
@@ -15,4 +15,5 @@ $("#export").click(()=>{
     $("#width").val($("#canvas").width());
     $("#height").val($("#canvas").height());
     $("#svg-form").submit();
+    window.alert(5 + 6)
 })
