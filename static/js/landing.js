@@ -15,15 +15,13 @@ $("#close-btn").click(() => {
 // upload btn click
 $("#pic-upload").change(() => {
   const [file] = $("#pic-upload").prop("files");
-  if (file) {
-    $("#image").attr("src", URL.createObjectURL(file));
-  }
+  $("#image-box").html(`<img src="${URL.createObjectURL(file)}" id="image" >`);
   $("#image-box").removeClass("hide-container");
   $("#crop-btn").removeClass("hide-container");
 
-  const image = document.getElementById("image");
+  let image = document.getElementById("image");
 
-  const cropper = new Cropper(image, {
+  let cropper = new Cropper(image, {
     autoCropArea: 1,
     viewMode: 1,
     scalable: false,
@@ -44,7 +42,7 @@ $("#pic-upload").change(() => {
       let container = new DataTransfer();
       container.items.add(file);
       fileInputElement.files = container.files;
-
+      console.log(fileInputElement.files);
       const reader = new FileReader();
       reader.onload = function (e) {
         $("#planImage").val(this.result);

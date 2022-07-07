@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect
+from django.http import HttpResponse
+from flask import Flask, render_template, request
 from flask_cors import CORS 
 import json
 from tkinter import *
@@ -34,8 +35,8 @@ def testing():
         }
         return render_template('testing.html', data=data)
     else:
-        return render_template('index.html')
+        HttpResponse(400)
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=1800)
+    app.run(debug=True)

@@ -12,17 +12,15 @@
             <div class="icon-title">Wifi Planner</div>
         </div>
         <nav class="wp-header-btn-box">
-            
+            <a id="save" class="wp-btn nav-btn"><i class="fas fa-save"></i> Save Plan</a>
         </nav>
     </header>
     <main class="wp-container">
         <div class="container-left">
-            <div class="canvas-box">
-            <canvas id="output-canvas"></canvas> 
-            </div>
+            <div class="canvas-box scroll" id="output-canvas"></div>
         </div>
 
-        <div class="container-right">
+        <div class="container-right scroll">
             
         </div>
     </main>
@@ -30,4 +28,6 @@
         var data = '{{data | tojson}}';
     </script>
     <script src="{{url_for('static', filename='js/testing.js')}}"></script>
+    <script src="{{ url_for('static', filename='/node_modules/heatmap.js/build/heatmap.js')}}"></script>
+
 {% endblock %}

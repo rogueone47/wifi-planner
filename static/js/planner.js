@@ -3,7 +3,9 @@ $(window).on("load", ()=>{
     $("#transparancy-layer").css("opacity", 0.5);
 
     const actualImage = new Image();
-    actualImage.src = $("#canvas").css("background-image").replace(/url\(['"]*(.*?)['"]*\)/g, '$1');
+    let url = $("#canvas").css("background-image").replace(/url\(['"]*(.*?)['"]*\)/g, '$1');
+    actualImage.src = url;
+
     if(actualImage.src){
     actualImage.onload = ()=>{
         let cbWidth = $("#canvas-box").width();
