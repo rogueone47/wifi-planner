@@ -14,14 +14,9 @@
             <a href="/" class="wp-btn nav-btn"><i class="fas fa-file-import"></i> Import Plan</a>
             <a href="" class="wp-btn nav-btn"><i class="fas fa-save"></i> Save Plan</a>
             <a class="wp-btn nav-btn" id="export"><i class="fas fa-cloud-download-alt"></i> Export Plan</a>
-            <form action="/playground" method="post" id="svg-form" hidden>
-                <input type="text" name="svg" id="svg-data" hidden>
-                <input type="number" name="width" id="width">
-                <input type="number" hidden id="height" name="height">
-            </form>
         </nav>
-    </header>
-    <main class="wp-container">
+      </header>    
+      <main class="wp-container">   
         <div class="container-left">
             <div class="canvas-box" id="canvas-box">
                 <svg id="canvas" style="background: url({{data}});">
@@ -49,7 +44,7 @@
                         <path
                           d="M 100 0 L 0 0 0 100"
                           fill="none"
-                          stroke="green"
+                          stroke="#535361"
                           stroke-width="1"
                         />
                       </pattern>
@@ -75,7 +70,7 @@
                     </label>
 
                     <input type="radio" name="draw-state" id="draw" hidden>
-                    <label for="draw" class="wp-btn tool-btn">
+                    <label for="draw" class="wp-btn tool-btn draw-btn">
                         &#128397;
                     </label>
 
@@ -125,27 +120,30 @@
                   <img id="cardimage" src='https://useruploads.socratic.org/eDXojKJ8TDG8ywWqI6gS_displayImage.aspx.jpg'>
                 </div>
                 <div class='card_right'>
-                    <div class="form">
+                    <form action="/playground" method="post" id="svg-form" class="form">
                         <div class="title">Welcome</div>
                         <div class="subtitle">Let's create your project!</div>
                         <div class="input-container ic1">
-                          <input id="firstname" class="input" type="text" placeholder=" " />
+                          <input id="projectname" class="input" type="text" placeholder=" " />
                           <div class="cut"></div>
-                          <label for="firstname" class="placeholder">Project Name</label>
+                          <label for="projectname" class="placeholder">Project Name</label>
                         </div>
                         <div class="input-container ic2">
-                          <input id="lastname" class="input" type="text" placeholder=" " />
+                          <input id="plan_height" class="input" type="text" placeholder=" " />
                           <div class="cut cut-short"></div>
-                          <label for="lastname" class="placeholder">Height</label>
+                          <label for="plan_height" class="placeholder">Height</label>
                         </div>
                         <div class="input-container ic2">
-                          <input id="email" class="input" type="text" placeholder=" " />
+                          <input id="plan_width" class="input" type="text" placeholder=" " />
                           <div class="cut cut-short"></div>
-                          <label for="email" class="placeholder">Width</>
+                          <label for="plan_width" class="placeholder">Width</>
                         </div>
-                        <button class="submit" id="submit">submit</button>
-                      </div>
-                                      </div>
+                          <input type="text" name="svg" id="svg-data" hidden>
+                          <input type="number" hidden name="canvas_width" id="canvas_width">
+                          <input type="number" hidden id="canvas_height" name="canvas_height">
+                        </div>
+                      </form>
+                        <button type="submit" class="submit" id="submit">submit</button>
               </div>
           </div>
           <div class="modal_overlay">

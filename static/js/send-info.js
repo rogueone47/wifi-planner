@@ -4,16 +4,15 @@ $(document).on('click','.submit',()=>{
         const e = $('#canvas').find("line")[i];
         let info = {
             'x1':e.x1.baseVal.value,
-            'x2':e.x1.baseVal.value,
-            'y1':e.x1.baseVal.value,
-            'y2':e.x1.baseVal.value,
+            'x2':e.x2.baseVal.value,
+            'y1':e.y1.baseVal.value,
+            'y2':e.y2.baseVal.value,
             'stroke': e.attributes.stroke.value,
         }
         data = [...data, info];
     }
     $("#svg-data").val(JSON.stringify(data));
-    $("#width").val($("#canvas").width());
-    $("#height").val($("#canvas").height());
+    $("#canvas_width").val($("#canvas").width());
+    $("#canvas_height").val($("#canvas").height());
     $("#svg-form").submit();
-    window.alert(5 + 6)
 })
