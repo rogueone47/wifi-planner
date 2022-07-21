@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
     scroll-behavior: smooth;
+    user-select: none;
 }
 :root{
     --primary-color: #1a1d26;

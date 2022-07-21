@@ -27,8 +27,9 @@ def testing():
     if request.method == 'POST':
         svg = request.form.get('svg')
         svg = json.loads(svg)
-        size = (request.form.get('width'), request.form.get('height'))
+        size = (request.form.get('c_width'), request.form.get('c_height'))
         data =  {
+            'project_name':request.form.get('project_name'),
             'svg':svg,
             'size':size
         }
