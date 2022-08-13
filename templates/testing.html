@@ -1,33 +1,83 @@
-{% extends "base.html" %}
-
-{% block style%}
+{% extends "base.html" %} {% block style%}
 <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}" />
 <link rel="stylesheet" href="{{url_for('static', filename='css/testing.css')}}" />
-{% endblock %}
+{% endblock %} {% block body %}
+<header class="wp-header">
+    <div class="wp-icon-box">
+        <img src="{{url_for('static', filename='assets/icon.svg')}}" alt="" class="wp-icon" />
+        <div class="icon-title">Wifi Planner</div>
+    </div>
+    <nav class="wp-header-btn-box">
+        <a id="save" class="wp-btn nav-btn"><i class="fas fa-save"></i> Save Plan</a>
+    </nav>
+</header>
+<main class="wp-container">
+    <div class="container-left">
+        <div class="canvas-box scroll" id="output-canvas"></div>
+    </div>
 
-{% block body %}
-    <header class="wp-header">
-        <div class="wp-icon-box">
-            <img src="{{url_for('static', filename='assets/icon.svg')}}" alt="" class="wp-icon">
-            <div class="icon-title">Wifi Planner</div>
-        </div>
-        <nav class="wp-header-btn-box">
-            <a id="save" class="wp-btn nav-btn"><i class="fas fa-save"></i> Save Plan</a>
-        </nav>
-    </header>
-    <main class="wp-container">
-        <div class="container-left">
-            <div class="canvas-box scroll" id="output-canvas"></div>
+    <div class="container-right scroll">
+        <div class="selection-box">
+            <div class="select-box">
+                <div class="select-box__current" tabindex="1">
+                    <div class="select-box__value">
+                        <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked" />
+                        <p class="select-box__input-text">
+                            -- Select Wifi Standard of Your Modem --
+                        </p>
+                    </div>
+                    <div class="select-box__value">
+                        <input class="select-box__input" type="radio" id="1" value="2" name="Ben" />
+                        <p class="select-box__input-text">Wifi-11a</p>
+                    </div>
+                    <div class="select-box__value">
+                        <input class="select-box__input" type="radio" id="2" value="3" name="Ben" />
+                        <p class="select-box__input-text">Wifi-11b</p>
+                    </div>
+                    <div class="select-box__value">
+                        <input class="select-box__input" type="radio" id="3" value="4" name="Ben" />
+                        <p class="select-box__input-text">Wifi-11ac</p>
+                    </div>
+                    <div class="select-box__value">
+                        <input class="select-box__input" type="radio" id="4" value="5" name="Ben" />
+                        <p class="select-box__input-text">Wifi-11g</p>
+                    </div>
+                    <div class="select-box__value">
+                        <input class="select-box__input" type="radio" id="4" value="5" name="Ben" />
+                        <p class="select-box__input-text">Wifi-11n</p>
+                    </div>
+                    <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+                        alt="Arrow Icon" aria-hidden="true" />
+                </div>
+                <ul class="select-box__list">
+                    <li>
+                        <label class="select-box__option" for="1" aria-hidden="aria-hidden">Wifi-11a</label>
+                    </li>
+                    <li>
+                        <label class="select-box__option" for="2" aria-hidden="aria-hidden">Wifi-11b</label>
+                    </li>
+                    <li>
+                        <label class="select-box__option" for="3" aria-hidden="aria-hidden">Wifi-11ac</label>
+                    </li>
+                    <li>
+                        <label class="select-box__option" for="4" aria-hidden="aria-hidden">Wifi-11g</label>
+                    </li>
+                    <li>
+                        <label class="select-box__option" for="4" aria-hidden="aria-hidden">Wifi-11n</label>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="container-right scroll">
-            
+        <div class="add-wifi-box">
+            <label class="wp-btn nav-btn add-wifi">Add Wifi Modem to the plan</label>
         </div>
-    </main>
-    <script>
+    </div>
+</main>
+<script>
         var data = '{{data | tojson}}';
-    </script>
-    <script src="{{url_for('static', filename='js/testing.js')}}"></script>
-    <script src="{{ url_for('static', filename='/node_modules/heatmap.js/build/heatmap.js')}}"></script>
+</script>
+<script src="{{url_for('static', filename='js/testing.js')}}"></script>
+<script src="{{ url_for('static', filename='/node_modules/heatmap.js/build/heatmap.js')}}"></script>
 
 {% endblock %}

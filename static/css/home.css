@@ -46,7 +46,6 @@ body{
 
 .container-right{
   background-color: var(--secondary-color);
-  border-left: 1px solid #ffffff;
   overflow: scroll;
 }
 
@@ -91,7 +90,7 @@ body{
 
 .nav-btn:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #000000, #2e2e2e, #4a4a4a, #7f7f7f, #656565, #868686, #b4b4b4, #cdcdcd, #000000);
   position: absolute;
   top: -2px;
   left:-2px;

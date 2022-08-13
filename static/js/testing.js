@@ -7,7 +7,7 @@ window.onload = () => {
     maxOpacity: 0.6,
     radius: 50,
     blur: 0.9,
-    backgroundColor: "rgba(0, 0, 58, 0.96)",
+    backgroundColor: "#cdcdcd",
   });
   $(".heatmap-canvas").width(data.size[0]);
   $(".heatmap-canvas").height(data.size[1]);
@@ -42,7 +42,6 @@ window.onload = () => {
   })
 
 };
-
 
 
 $("#save").click(()=>{
