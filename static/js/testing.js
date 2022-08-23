@@ -2,17 +2,17 @@ var c = document.getElementById("output-canvas");
 data = JSON.parse(data);
 
 window.onload = () => {
-  var heatmap = h337.create({
-    container: c,
-    maxOpacity: 0.6,
-    radius: 50,
-    blur: 0.9,
-    backgroundColor: "#cdcdcd",
-  });
-  $(".heatmap-canvas").width(data.size[0]);
-  $(".heatmap-canvas").height(data.size[1]);
-  $(".heatmap-canvas").css("width", data.size[0]);
-  $(".heatmap-canvas").css("height", data.size[1]);
+  // var heatmap = h337.create({
+  //   container: c,
+  //   maxOpacity: 0.6,
+  //   radius: 50,
+  //   blur: 0.9,
+  //   backgroundColor: "#cdcdcd",
+  // });
+  // $(".heatmap-canvas").width(data.size[0]);
+  // $(".heatmap-canvas").height(data.size[1]);
+  // $(".heatmap-canvas").css("width", data.size[0]);
+  // $(".heatmap-canvas").css("height", data.size[1]);
   var ca = $("#output-canvas").find("canvas")[0];
   var ctx = ca.getContext("2d");
   ctx.canvas.height = data.size[1];
@@ -28,26 +28,33 @@ window.onload = () => {
     ctx.strokeStyle = e.stroke;
     ctx.stroke();
     ctx.closePath();}
-  document.getElementsByClassName("heatmap-canvas")[0].addEventListener("click", function (e) {
-    heatmap.addData({ x: e.layerX, y: e.layerY, value: 100, radius: 100 });
-  for (let i=0; i < data.svg.length; i++) {
-      const e = data.svg[i];
-      ctx.beginPath();
-      ctx.moveTo(e.x1, e.y1, e.x2, e.y2);
-      ctx.lineTo(e.x2, e.y2);
-      ctx.strokeStyle = e.stroke;
-      ctx.stroke();
-      ctx.closePath();
-    }
-  })
-
 };
 
 
 $("#save").click(()=>{
-  link = document.getElementsByClassName("heatmap-canvas")[0].toDataURL(`image/jpg`);
+  link = document.getElementsByClassName("output-canvas")[0].toDataURL(`image/jpg`);
   let tempLink = document.createElement('a');
   tempLink.download = `${data.project_name}.jpg`;
   tempLink.href = link;
   tempLink.click();
 })
+
+$(".add-wifi").click(()=>addCode())
+
+function addCode() {
+  const wifiicon = document.createElement("div");
+  wifiicon.setAttribute("class", "mydiv");
+  wifiicon.style.position="absolute";
+  wifiicon.style.backgrounColor= "#d3d3d3";
+  wifiicon.style.zIndex="5";
+  const image = document.createElement('img');
+  image.setAttribute(
+    'src',
+    './static/assets/wifi.svg',
+  );
+  wifiicon.appendChild(image)
+  document.getElementById("output-canvas").appendChild(wifiicon)
+  $( ".mydiv" ).draggable();
+//   document.getElementById("output-canvas").innerHTML += 
+//     ``;
+}

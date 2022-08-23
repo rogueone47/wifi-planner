@@ -125,21 +125,22 @@
 
       <form action="/playground" method="post" id="form" class="modal-form">
         <div class="modal-input-area">
-          <input type="text" class="form-control" name="project_name" placeholder=" " />
+          <input type="text" class="form-control" name="project_name" id="pname" value="" placeholder=" " required/>
           <label for="" class="placeholder">Project Name</label>
         </div>
         <div class="modal-input-area">
-          <input type="text" class="form-control" name="scale_height" placeholder=" " />
+          <input type="text" class="form-control" name="scale_height" id="pheight" value="" placeholder=" " required/>
           <label for="" class="placeholder">Height</label>
         </div>
         <div class="modal-input-area">
-          <input type="text" class="form-control" name="scale_width" placeholder=" " />
+          <input type="text" class="form-control" name="scale_width" id="pwidth" value="" placeholder=" " required/>
           <label for="" class="placeholder">Width</label>
         </div>
-        <input type="text" name="svg" id="svg-data" hidden >
-        <input type="text" name="c_width" id="width" hidden>
-        <input type="text" name="c_height" id="height" hidden>
+        <input type="text" name="svg" id="svg-data" value="" hidden >
+        <input type="text" name="c_height" id="height" value="" hidden>
+        <input type="text" name="c_width" id="width" value="" hidden>
         <div class="modal-input-area">
+          <button class="btn-submit" type="button" id="save-offline">Save Offline</button>
           <button type="submit" class="btn-submit">Submit</button>
         </div>
       </form>
@@ -151,4 +152,5 @@
 <script src="{{url_for('static', filename='js/zoom-canvas.js')}}"></script>
 <script src="{{url_for('static', filename='js/draw.js')}}"></script>
 <script src="{{url_for('static', filename='js/send-info.js')}}"></script>
+<script src="{{url_for('static', filename='js/save-offline.js')}}"></script>
 {% endblock %}

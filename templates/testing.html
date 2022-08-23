@@ -13,7 +13,9 @@
 </header>
 <main class="wp-container">
     <div class="container-left">
-        <div class="canvas-box scroll" id="output-canvas"></div>
+        <div class="canvas-box scroll" id="output-canvas">
+            <canvas class="canvas"></canvas>
+        </div>
     </div>
 
     <div class="container-right scroll">
@@ -75,7 +77,7 @@
     </div>
 </main>
 <script>
-        var data = '{{data | tojson}}';
+    var data = '{{data | tojson}}';
 </script>
 <script src="{{url_for('static', filename='js/testing.js')}}"></script>
 <script src="{{ url_for('static', filename='/node_modules/heatmap.js/build/heatmap.js')}}"></script>
