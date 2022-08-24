@@ -29,7 +29,7 @@ window.onload = () => {
     ctx.stroke();
     ctx.closePath();}
   document.getElementsByClassName("heatmap-canvas")[0].addEventListener("click", function (e) {
-    heatmap.addData({ x: e.layerX, y: e.layerY, value: 100, radius: 100 });
+    heatmap.addData({ x: e.layerX, y: e.layerY, radius: 100 });
   for (let i=0; i < data.svg.length; i++) {
       const e = data.svg[i];
       ctx.beginPath();
