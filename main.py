@@ -46,7 +46,11 @@ def testing():
         print("\n\n")
         print(svg)
         print("\n\n")
-        print(h_len, v_len)
+        mh = max(h_len)
+        vh = max(v_len)
+        print(mh, scale_x)
+        print(f"x axis 1 unit is {mh / int(scale_x)}m and y axis 1 unit is {vh / int(scale_y)}m")
+        print("\n\n")
         
         size = (request.form.get('c_width'), request.form.get('c_height'))
         data = {
